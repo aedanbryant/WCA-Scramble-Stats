@@ -37,3 +37,8 @@ LexOpenFrance2025,f,A,0,3,UR3- DR1+ DL0+ UL5+ U1- R1- D3- L2- ALL6+ y2 U2- R1- D
 CiuLaManchaOpen2025,f,A,0,3,UR1- DR2- DL1- UL2+ U2- R4+ D1- L4- ALL0+ y2 U4- R2- D0+ L1+ ALL0+,10,"UR(-1,1) DL(2,-2) UL(1,0) U(1,-1) D(2,-2) dr(1,1) ul(-1,-2)"
 PlazaRio2Open2025,d,B,1,2,UR4- DR1- DL1- UL2+ U4+ R4+ D0+ L1- ALL0+ y2 U1- R2+ D0+ L1- ALL0+,10,"DR(1,1) UL(-1,0) U(-1,-1) R(0,1) D(1,-1) L(1,-1) dl(-4,1)"
 CubeOninRichardson2025,d,A,0,2,UR0+ DR2- DL1+ UL0+ U1+ R1+ D2- L2+ ALL1+ y2 U1+ R1+ D2+ L2+ ALL1+,10,"UR(-1,2) DR(2,0) U(0,1) D(1,1) L(-3,2) dl(-1,1)"
+LopesUpAZ2026,d,A,0,3,UR0+ DR5+ DL0+ UL4- U3+ R4- D4- L1+ ALL5+ y2 U1+ R2+ D2- L4- ALL3+,10,"DR(-1,0) UL(1,1) L(2,-1) dr(-3,-3) dl(-1,1) ul(-1,1) /(1,1)"
+PleaseDontDNFKaohsiung2026,2,A,0,2,UR0+ DR3- DL1+ UL1- U1+ R1- D1+ L0+ ALL0+ y2 U2+ R2- D2+ L4+ ALL1-,10,"DR(1,1) DL(0,1) R(3,-2) ur(0,2) dr(-2,2) /(0,1)"
+WelcometoWashingtonDC2026,d,B,1,1,UR3- DR6+ DL3- UL5- U2- R2- D4- L2- ALL5- y2 U1- R0+ D2- L2- ALL6+,10,"UL(-2,0) R(-1,0) D(1,-1) dr(1,-2) \(-3,4)"
+WesternSicilyOpen2026,f,B,0,3,UR1- DR3+ DL3- UL5+ U4- R0+ D0+ L2- ALL0+ y2 U3- R2+ D3+ L0+ ALL1-,10,"DR(-2,2) D(2,-2) ur(0,-1) dr(1,1) dl(-1,2) /(2,-1)"
+MostolesOpen2026,d,B,0,3,UR2- DR4- DL2- UL0+ U3- R4+ D5+ L0+ ALL5- y2 U0+ R0+ D3- L0+ ALL5-,10,"UR(1,-1) DR(1,1) UL(2,-4) U(2,-3) /(1,-1)"

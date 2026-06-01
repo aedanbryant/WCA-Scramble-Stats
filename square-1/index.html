@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCA Scramble Statistics</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <h1><a id="event-header" href="../">Square-1</a></h1>
+    <select id="csv-selector" onchange="updateSubOptions()">
+        
+        <option value="All_X_Movers">All X Movers</option>
+        
+        <option value="Best_Groups">Best Groups</option>
+        
+        <option value="Distributions">Distributions</option>
+        
+        <option value="State_Stats">State Stats</option>
+        
+    </select>
+
+    <!-- Secondary Dropdown for Subcategories -->
+    <select id="sub-csv-selector" onchange="displaySelectedCSV()">
+        <!-- This will be dynamically populated -->
+    </select>
+
+    <div id="csv-data"></div>
+
+    <script>
+        const csvFiles = {
+            
+            'All_X_Movers': ['All_X_Movers/13_Slices', 'All_X_Movers/54_Angle_Turn_Metric', 'All_X_Movers/<35_Angle_Turn_Metric', 'All_X_Movers/<7_Slices', 'All_X_Movers/CSPOBLCP_<5_Slices', 'All_X_Movers/CSPOBL_<4_Slices', 'All_X_Movers/Layer_<5_Slices'],
+            
+            'Best_Groups': ['Best_Groups/CSPOBL_Ao5.csv', 'Best_Groups/CSPOBL_Best_Possible_Ao5.csv', 'Best_Groups/CSPOBL_Mo5.csv', 'Best_Groups/CSP_Ao5.csv', 'Best_Groups/CSP_Best_Possible_Ao5.csv', 'Best_Groups/CSP_Mo5.csv', 'Best_Groups/Slicecount_Ao5.csv', 'Best_Groups/Slicecount_Best_Possible_Ao5.csv', 'Best_Groups/Slicecount_Mo5.csv'],
+            
+            'Distributions': ['Distributions/Angle_Turn_Metric.csv', 'Distributions/CSPOBLCP_Slicecount.csv', 'Distributions/CSPOBL_Slicecount.csv', 'Distributions/CSP_Slicecount.csv', 'Distributions/Layer_Slicecount.csv', 'Distributions/Optimal_Slicecount.csv'],
+            
+            'State_Stats': ['State_Stats/CSP_Skip'],
+            
+        };
+
+        const subCategoryNames = {
+            
+            'All_X_Movers/13_Slices': '13 Slices',
+            
+            'All_X_Movers/54_Angle_Turn_Metric': '54 Angle Turn Metric',
+            
+            'All_X_Movers/<35_Angle_Turn_Metric': '<35 Angle Turn Metric',
+            
+            'All_X_Movers/<7_Slices': '<7 Slices',
+            
+            'All_X_Movers/CSPOBLCP_<5_Slices': 'CSPOBLCP <5 Slices',
+            
+            'All_X_Movers/CSPOBL_<4_Slices': 'CSPOBL <4 Slices',
+            
+            'All_X_Movers/Layer_<5_Slices': 'Layer <5 Slices',
+            
+            'Best_Groups/CSPOBL_Ao5.csv': 'CSPOBL Ao5',
+            
+            'Best_Groups/CSPOBL_Best_Possible_Ao5.csv': 'CSPOBL Best Possible Ao5',
+            
+            'Best_Groups/CSPOBL_Mo5.csv': 'CSPOBL Mo5',
+            
+            'Best_Groups/CSP_Ao5.csv': 'CSP Ao5',
+            
+            'Best_Groups/CSP_Best_Possible_Ao5.csv': 'CSP Best Possible Ao5',
+            
+            'Best_Groups/CSP_Mo5.csv': 'CSP Mo5',
+            
+            'Best_Groups/Slicecount_Ao5.csv': 'Slicecount Ao5',
+            
+            'Best_Groups/Slicecount_Best_Possible_Ao5.csv': 'Slicecount Best Possible Ao5',
+            
+            'Best_Groups/Slicecount_Mo5.csv': 'Slicecount Mo5',
+            
+            'Distributions/Angle_Turn_Metric.csv': 'Angle Turn Metric',
+            
+            'Distributions/CSPOBLCP_Slicecount.csv': 'CSPOBLCP Slicecount',
+            
+            'Distributions/CSPOBL_Slicecount.csv': 'CSPOBL Slicecount',
+            
+            'Distributions/CSP_Slicecount.csv': 'CSP Slicecount',
+            
+            'Distributions/Layer_Slicecount.csv': 'Layer Slicecount',
+            
+            'Distributions/Optimal_Slicecount.csv': 'Optimal Slicecount',
+            
+            'State_Stats/CSP_Skip': 'CSP Skip',
+            
+        };
+
+        function updateSubOptions() {
+            const primaryCategory = document.getElementById('csv-selector').value;
+            const subCsvSelector = document.getElementById('sub-csv-selector');
+
+            // Clear existing options
+            subCsvSelector.innerHTML = '';
+
+            // Populate with new subcategory options
+            csvFiles[primaryCategory].forEach(file => {
+                const option = document.createElement('option');
+                option.value = file;
+                option.textContent = subCategoryNames[file];
+                subCsvSelector.appendChild(option);
+            });
+
+            // Automatically display the first subcategory's CSV
+            displayCSV(csvFiles[primaryCategory][0]);
+        }
+
+        function displayCSV(filename) {
+            Papa.parse(filename, {
+                download: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    const rows = results.data; // PapaParse gives us an array of arrays
+                    if (rows.length === 0) return;
+
+                    let rowspans = [];
+                    let colTracker = [];
+                    const numCols = rows[0].length;
+
+                    // Initialize tracking arrays
+                    rows.forEach((_, rowIndex) => {
+                        rowspans[rowIndex] = new Array(numCols).fill(1);
+                    });
+                    colTracker = new Array(numCols).fill(1);
+
+                    // LOOP 1: Calculate Rowspans
+                    // We start from index 1 (second row) to compare with the one above
+                    for (let i = 1; i < rows.length; i++) {
+                        let canCombine = true;
+
+                        for (let j = 0; j < numCols; j++) {
+                            // Check if current cell matches cell above AND the previous column also merged
+                            if (canCombine && rows[i][j] === rows[i - 1][j]) {
+                                colTracker[j]++;
+                                // Update the 'root' cell (the one that stays visible) with the new span count
+                                rowspans[i - colTracker[j] + 1][j] = colTracker[j];
+                                // Mark current cell as 0 so we know to skip it in the HTML loop
+                                rowspans[i][j] = 0; 
+                            } else {
+                                colTracker[j] = 1;
+                                canCombine = false; // Break the horizontal "combine" chain
+                            }
+                        }
+                    }
+
+                    // LOOP 2: Generate HTML
+                    let table = '<table>';
+                    rows.forEach((row, rowIndex) => {
+                        table += '<tr>';
+                        row.forEach((col, colIndex) => {
+                            const span = rowspans[rowIndex][colIndex];
+
+                            if (rowIndex === 0) {
+                                // Header Row
+                                table += `<th>${col}</th>`;
+                            } else {
+                                // Only create a <td> if its rowspan is > 0
+                                if (span > 0) {
+                                    table += `<td rowspan="${span}">${col}</td>`;
+                                }
+                            }
+                        });
+                        table += '</tr>';
+                    });
+                    table += '</table>';
+
+                    document.getElementById('csv-data').innerHTML = table;
+                }
+            });
+        }
+
+        function displaySelectedCSV() {
+            const selectedFile = document.getElementById('sub-csv-selector').value;
+            displayCSV(selectedFile);
+        }
+
+        // Initialize with the first primary category
+        updateSubOptions();
+    </script>
+
+    <a href="../">Back to main page</a>
+</body>
+</html>

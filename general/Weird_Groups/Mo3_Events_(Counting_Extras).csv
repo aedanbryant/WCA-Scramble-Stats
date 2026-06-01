@@ -1,8 +1,7 @@
 competition_id,event_id,round_type_id,group_id,scramble_count
-AlicanteOpen2016,444bf,f,A,4
-AlicanteOpen2016,555bf,f,A,4
-Alziramuevelaspiezas2017,444bf,f,A,4
-AnatoliyMorozOpen2015,666,c,B,4
+AmoreAmorebietaOpen2026,333bf,f,A,3
+AnatoliyMorozOpen2015,333bf,1,A,4
+AnatoliyMorozOpen2015,333bf,1,B,4
 AnatoliyMorozOpen2015,777,c,A,4
 AnatoliyMorozOpen2015,777,c,B,4
 AquarelaSpeedcubing2015,444bf,f,A,3
@@ -34,6 +33,7 @@ ClassicSanLorenzoOpen2016,555bf,f,A,3
 ColombiaNationals2014,555bf,f,A,3
 CopadeInvierno2017,666,c,A,3
 CopadeInvierno2017,666,c,B,3
+DFWCubingSpring2026,333bf,f,C,3
 DneprCubeDay2014,333bf,f,A,3
 DneprCubeDay2014,333bf,f,B,3
 EstonianOpen2014,333bf,f,A,3
