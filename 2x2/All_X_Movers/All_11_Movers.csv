@@ -1,4 +1,6 @@
 competition_id,round_type_id,group_id,is_extra,scramble_num,scramble,optimal_movecount,optimal_solution
+KentSpring2026,1,B,0,4,R F' U' F' R2 U2 F U' R U' R',11, F U R' U R' U2 R' U R F U2
+XMadridOpen2026,1,B,0,2,U' R2 F U' R2 U2 R U' R2 F U2,11, F R2 U' F R2 F2 R' F R2 U' F2
 PUCValCubo2026,f,A,0,3,U2 R F' U' R' U R' U' F U' R2,11, F R F' U2 F U F' U R' U R2
 CampeonatoMineiro2026,2,A,0,4,U R' U2 F R' F R' F U2 F U,11, F R2 F' R2 F' R F' R2 U2 R' F
 NordicSwedishChampionship2026,f,A,0,2,U' R2 U' F R2 U2 R U' R' U2 R',11, F U2 R2 F2 U R F' R2 U F' U

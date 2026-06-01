@@ -1,4 +1,8 @@
 competition_id,round_type_id,group_id,is_extra,scramble_num,scramble,optimal_movecount,optimal_solution
+BarbyCube2026,d,C,0,2,R U' R2 F U2 R U R2 F R U,5, R F' R U2 R'
+LiuzhouOpen2026,d,A,0,1,F R U' R U' R' U' R' U' R U2,5, U' R U2 R' F'
+EntreRiosCubea2026,f,A,0,5,R U2 F' R' U' R' U' F R' U' F,5, F2 U' R2 U' R2
+IndalOpenOClock2026,2,B,0,4,R' U R' F U R U R' U' R U,5, F2 R2 F U F
 WestonsuperMareSpring2026,2,A,1,2,U2 R' U R2 U' F' U' R' U' R U',5, U' F U R' U
 TomellosoOpen2026,f,A,0,4,R U' R2 F' U' F U' R2 U2 R2 U',5, U' F R F' R'
 NoClocksinGreenpoint2026,1,C,0,3,U R' U' F' R U' R F' U' F' R',5, U F' U' F2 U2

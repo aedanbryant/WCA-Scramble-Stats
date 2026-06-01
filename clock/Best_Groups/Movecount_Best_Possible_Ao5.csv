@@ -13,6 +13,13 @@ LentOpen2015,7.67,d,B,0,4,UR5- DR2+ DL4- UL4+ U2- R6+ D2- L5- ALL4- y2 U5+ R4- D
 LentOpen2015,7.67,d,B,0,5,UR5- DR6+ DL3- UL6+ U1- R2+ D5+ L3- ALL3+ y2 U0+ R5+ D4- L0+ ALL5- UL,7,R3- D4+ dl5+ /6- \2+ y2 D3- DR5-
 LentOpen2015,7.67,d,B,1,1,UR3- DR2- DL0+ UL5- U3- R4- D2+ L3+ ALL4- y2 U0+ R0+ D6+ L4- ALL4+ UR DR DL,7,UR3- UL2+ dr5+ y2 dr6+ L2- DL6+ \4-
 LentOpen2015,7.67,d,B,1,2,UR4+ DR0+ DL1+ UL6+ U6+ R4- D1+ L1+ ALL2+ y2 U5- R2+ D4- L1+ ALL2+ UR UL,8,DL3+ U4- D5- L1+ y2 dr5- UL1- DR4+ UR6+
+KaunasOddorEven2026,8.0,c,B,0,1,UR0+ DR0+ DL5- UL3- U4+ R3+ D4- L6+ ALL4+ y2 U0+ R4+ D2- L5- ALL3-,9,UR3- UL2+ D3- dr1- y2 dr2- D2+ R4- L5+ /5+
+KaunasOddorEven2026,8.0,c,B,0,2,UR4- DR5- DL4+ UL4+ U6+ R3+ D4- L4- ALL3+ y2 U4+ R4+ D2- L0+ ALL5-,8,UR6- DL4- D3- dl2+ /4- y2 ur1+ D2+ UR4-
+KaunasOddorEven2026,8.0,c,B,0,3,UR6+ DR4- DL3- UL6+ U5+ R2- D2- L1+ ALL5+ y2 U2- R3+ D1+ L0+ ALL0+,9,DL3- UL1- U4- /4- y2 D1- U5+ UR3- /6+ ALL3+
+KaunasOddorEven2026,8.0,c,B,0,4,UR5+ DR6+ DL4- UL1- U5- R5+ D2- L3+ ALL4- y2 U4- R6+ D4- L2- ALL3+,10,DR4- DL1+ UL1+ D3+ dr4- y2 ul2- DL2+ DR2+ UR4+ /5-
+KaunasOddorEven2026,8.0,c,B,0,5,UR4- DR5- DL4- UL6+ U2- R1+ D6+ L0+ ALL1+ y2 U1- R1- D0+ L2- ALL5-,8,DR3+ R5+ L2- dr5- y2 L2+ UR1+ /4+ \2+
+KaunasOddorEven2026,8.0,c,B,1,1,UR1- DR4+ DL4+ UL6+ U1+ R3- D4- L0+ ALL5- y2 U0+ R3- D5- L4+ ALL4+,8,DL4- UL6- ul1- ALL3- y2 dr1+ R3+ L3+ DL5+
+KaunasOddorEven2026,8.0,c,B,1,2,UR4+ DR2+ DL3+ UL1+ U6+ R6+ D1+ L2+ ALL5- y2 U4+ R1- D3+ L5+ ALL4-,8,DL6- U1+ \3- y2 dl2+ D3- UL5- UR1+ \2-
 XianjuSpecial2026,8.0,2,A,0,1,UR1+ DR4- DL4- UL0+ U1- R3+ D4+ L5- ALL0+ y2 U1+ R5+ D5+ L1+ ALL1-,8,DL3- D5- dl1+ \1+ y2 ul3+ ur4+ UL1- DR5-
 XianjuSpecial2026,8.0,2,A,0,2,UR4+ DR4+ DL4- UL6+ U5+ R4- D2- L5- ALL1- y2 U4- R1- D0+ L5+ ALL6+,9,DR4- DL6- UL3- dr3+ ALL5- y2 ul2- R1+ L3+ UL4+
 XianjuSpecial2026,8.0,2,A,0,3,UR6+ DR2- DL5- UL0+ U4- R4+ D3- L5- ALL5+ y2 U0+ R4- D4- L5- ALL5+,8,UR6- DL2- U4+ R2- ul2- y2 ul1- L5+ DR4+
